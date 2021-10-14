@@ -28,6 +28,7 @@ class Blockchain {
         }
 
         this.chain = chain;
+        console.log('Chain replaced')
     }
 
     static isValidChain(chain) {
