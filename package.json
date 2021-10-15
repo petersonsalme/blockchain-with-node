@@ -19,5 +19,8 @@
   "homepage": "https://github.com/petersonsalme/blockchain#readme",
   "devDependencies": {
     "jest": "^27.2.5"
+  },
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
   }
 }
