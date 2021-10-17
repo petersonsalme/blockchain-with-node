@@ -43,12 +43,15 @@ app.post('/api/transactions', (req, res) => {
         }
 
         transactionPool.addTransaction(transaction);
-        console.log('Transaction added to pool', transactionPool)
         
         return res.json(transaction);
     } catch (error) {
         return res.status(400).json({ error: 'Failed to create transaction', message: error.message });
     }
+});
+
+app.get('/api/transaction-pool-map', (req, res ) => {
+    res.json(transactionPool.transactionMap);
 });
 
 const syncChains = () => {
