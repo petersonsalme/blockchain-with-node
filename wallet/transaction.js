@@ -1,5 +1,4 @@
 const uuid = require('uuid/v1');
-const Wallet = require('.');
 const { MINING_REWARD, REWARD_INPUT } = require('./../config');
 const { verifySignature } = require('./../util');
 
