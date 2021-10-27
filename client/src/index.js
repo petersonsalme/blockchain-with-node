@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
+import App from './components/App';
 
 render(
-    <div>Testing this feature</div>, 
+    <App />, 
     document.getElementById('root')
 );
