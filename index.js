@@ -19,6 +19,7 @@ const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRES = `http://localhost:${DEFAULT_PORT}`;
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
     res.json(blockchain.chain);
@@ -72,7 +73,7 @@ app.get('/api/wallet-info', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    let absolutePath = path.join(__dirname, './client/index.html');
+    let absolutePath = path.join(__dirname, 'client/dist/index.html');
     res.sendFile(absolutePath);
 });
 
