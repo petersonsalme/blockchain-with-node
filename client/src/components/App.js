@@ -11,7 +11,7 @@ class App extends Component {
     };
     
     componentDidMount() {
-        const url = 'http://localhost:3000/api/wallet-info';
+        const url = `${document.location.origin}/api/wallet-info`;
         fetch(url)
             .then(response => response.json())
             .then(json => this.setState({ walletInfo: json }));
