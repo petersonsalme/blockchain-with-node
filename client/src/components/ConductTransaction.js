@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import history from "../history";
 
 class ConductTransaction extends Component {
     state = { recipient: '', amount: 0 };
@@ -23,7 +24,8 @@ class ConductTransaction extends Component {
         })
         .then(r => r.json())
         .then(json => {
-            alert(JSON.stringify(json))
+            alert(JSON.stringify(json));
+            history.push('/transaction-pool');
         });
     }
 
