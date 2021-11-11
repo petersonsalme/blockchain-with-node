@@ -77,6 +77,17 @@ app.get('/api/wallet-info', (req, res) => {
     })
 });
 
+app.get('/api/known-addresses', (req, res) => {
+    const addressMap = new Set();
+
+    for (let block of blockchain.chain) {
+        for (let transaction of block.data) {
+            Object.keys(transaction.outputMap).forEach(r => addressMap.add(r));
+        }
+    }
+    res.json(Array.from(addressMap));
+});
+
 app.get('*', (req, res) => {
     let absolutePath = path.join(__dirname, 'client/dist/index.html');
     res.sendFile(absolutePath);
