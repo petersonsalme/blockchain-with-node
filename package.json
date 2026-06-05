@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest",
     "start": "npm run build-client && node index.js",
     "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
     "start-redis": "docker-compose up -d",
